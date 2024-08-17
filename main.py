@@ -238,7 +238,7 @@ st.set_page_config(
 # Concise Header
 st.title("🎵 Spotify Song Recommender")
 st.subheader("""Welcome to the Spotify Song Recommender!""")
-st.subheader("""Select your preferences from the sidebar and adjust their value and weight below to receive personalized song recommendations.""")
+st.subheader("""Select your song preferences from the sidebar and adjust their values and weights below to receive personalized song recommendations. Higher weighted preferences are prioritized more in song calculations.""")
 st.write('')
 st.write("For more precise results, read the advanced tooltips on the GitHub page (found at the top-right of the screen), or try using percentile mode.")
 # Checkbox to display histograms of all input variables
