@@ -240,7 +240,7 @@ st.title("🎵 Spotify Song Recommender")
 st.subheader("""Welcome to the Spotify Song Recommender!""")
 st.subheader("""Select your preferences from the sidebar and adjust their value and weight below to receive personalized song recommendations.""")
 st.write('')
-st.write("For even more precise results, read the tooltips and histograms to understand the data, or try using percentile mode.")
+st.write("For more precise results, read the advanced tooltips on the GitHub page (found at the top-right of the screen), or try using percentile mode.")
 # Checkbox to display histograms of all input variables
 if st.checkbox("***Show input variable distributions***"):
     st.write("Distributions of Input Variables:")
