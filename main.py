@@ -430,6 +430,11 @@ if st.button('Calculate Recommendations', key='calculate'):
             'similarity_score': 'Similarity Score'
         })
 
+        # Multiply all numerical values by 100
+        numerical_columns = ['Popularity', 'Danceability', 'Energy', 'Speechiness', 
+                             'Acousticness', 'Instrumentalness', 'Valence', 'Similarity Score']
+        display_df[numerical_columns] = display_df[numerical_columns] * 100
+
         # Display the nicely formatted DataFrame
         st.write(f"Top 10 Recommended Songs for You")
         st.dataframe(display_df[['Track Name', 'Artist', 'Popularity', 
