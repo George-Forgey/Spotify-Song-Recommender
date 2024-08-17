@@ -1,0 +1,10 @@
+[theme]
+primaryColor = "#2bc430"      # Spotify green
+backgroundColor = "#40314a"   # Dark purple/gray for the background
+secondaryBackgroundColor = "#23272A"  # Even darker purple/gray for contrast
+textColor = "#f2eded"         # White text for readability against dark backgrounds
+font = "sans serif"           # Modern, clean font
+
+# Optional customizations:
+# base = "dark"               # Base theme mode (dark mode)
+# fontSize = "16px"           # Base font size
