@@ -8,7 +8,7 @@ import numpy as np
 
 
 # Load CSV data
-spotify_df = pd.read_csv('/Users/gcfor/Downloads/archive/spotify_songs.csv')
+spotify_df = pd.read_csv('spotify_songs.csv')
 
 # Normalize continuous features
 continuous_features = ['danceability', 'energy', 'speechiness', 
