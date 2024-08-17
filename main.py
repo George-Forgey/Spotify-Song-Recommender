@@ -434,7 +434,10 @@ if st.button('Calculate Recommendations', key='calculate'):
         numerical_columns = ['Popularity', 'Danceability', 'Energy', 'Speechiness', 
                              'Acousticness', 'Instrumentalness', 'Valence', 'Similarity Score']
         display_df[numerical_columns] = display_df[numerical_columns] * 100
-
+        
+        # Round all numerical values to 2 decimal places
+        display_df[numerical_columns] = display_df[numerical_columns].round(2)
+        
         # Display the nicely formatted DataFrame
         st.write(f"Top 10 Recommended Songs for You")
         st.dataframe(display_df[['Track Name', 'Artist', 'Popularity', 
