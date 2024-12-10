@@ -310,17 +310,17 @@ if track_artist_checkbox:
     if (artist_cleaned != '') and (artist_cleaned not in original_artists.values):
         st.write('Artist not in dataset :(')
     
-    artist_weight = st.number_input('Weight (0-100)', min_value=0, max_value=100, key='artist_weight')/100
+    artist_weight = st.slider('Weight (0-100)', min_value=0, max_value=100, key='artist_weight')/100
     st.subheader(' ')
     
 if track_popularity_checkbox:
-    popularity = st.number_input('Track Popularity (0-100)', min_value=0, max_value=100, key='popularity', help="The song's popularity score (0-100), where higher is better.")/100
-    popularity_weight = st.number_input('Weight (0-100)', min_value=0, max_value=100, key='popularity_weight')/100
+    popularity = st.slider('Track Popularity (0-100)', min_value=0, max_value=100, key='popularity', help="The song's popularity score (0-100), where higher is better.")/100
+    popularity_weight = st.slider('Weight (0-100)', min_value=0, max_value=100, key='popularity_weight')/100
     st.subheader(' ')
 
 if playlist_genre_checkbox:
     genre = st.selectbox('Genre', ('pop','rap','r&b','rock','latin','edm'), key='genre', help='The genre of the song.')
-    genre_weight = st.number_input('Weight (0-100)', min_value=0, max_value=100, key='genre_weight')/100
+    genre_weight = st.slider('Weight (0-100)', min_value=0, max_value=100, key='genre_weight')/100
     st.subheader(' ')
     
 if playlist_subgenre_checkbox:
@@ -332,42 +332,42 @@ if playlist_subgenre_checkbox:
         'urban contemporary', 'hip pop', 'new jack swing', 
         'neo soul', 'electro house', 'big room', 'pop edm', 
         'progressive electro house'), key='subgenre', help="The subgenre of the song.")
-    subgenre_weight = st.number_input('Weight (0-100)', min_value=0, max_value=100,key='subgenre_weight')/100
+    subgenre_weight = st.slider('Weight (0-100)', min_value=0, max_value=100,key='subgenre_weight')/100
     st.subheader(' ')
 
 # Danceability Checkbox
 if danceability_checkbox:
-    danceability = st.number_input('Danceability', min_value=0, max_value=100, key='danceability', help="How suitable a track is for dancing, ranging from 0.0 (least danceable) to 1.0 (most danceable).")/100
-    danceability_weight = st.number_input('Weight (0-100)', min_value=0, max_value=100, key='danceability_weight')/100
+    danceability = st.slider('Danceability', min_value=0, max_value=100, key='danceability', help="How suitable a track is for dancing, ranging from 0.0 (least danceable) to 1.0 (most danceable).")/100
+    danceability_weight = st.slider('Weight (0-100)', min_value=0, max_value=100, key='danceability_weight')/100
     st.subheader(' ')
 
 if energy_checkbox:
-    energy = st.number_input('Energy', min_value=0, max_value=100, key='energy', help="A measure of intensity and activity, from 0.0 to 1.0. Higher energy indicates faster, louder, and noisier tracks.")/100
-    energy_weight = st.number_input('Weight (0-100)', min_value=0, max_value=100, key='energy_weight') / 100
+    energy = st.slider('Energy', min_value=0, max_value=100, key='energy', help="A measure of intensity and activity, from 0.0 to 1.0. Higher energy indicates faster, louder, and noisier tracks.")/100
+    energy_weight = st.slider('Weight (0-100)', min_value=0, max_value=100, key='energy_weight') / 100
     st.subheader(' ')
                             
 # Speechiness Checkbox
 if speechiness_checkbox:
-    speechiness = st.number_input('Speechiness', min_value=0, max_value=100, key='speechiness', help="Detects the presence of spoken words in a track. Values closer to 1.0 indicate more speech-like content.")/100
-    speechiness_weight = st.number_input('Weight (0-100)', min_value=0, max_value=100, key='speechiness_weight') / 100
+    speechiness = st.slider('Speechiness', min_value=0, max_value=100, key='speechiness', help="Detects the presence of spoken words in a track. Values closer to 1.0 indicate more speech-like content.")/100
+    speechiness_weight = st.slider('Weight (0-100)', min_value=0, max_value=100, key='speechiness_weight') / 100
     st.subheader(' ')
 
 # Acousticness Checkbox
 if acousticness_checkbox:
-    acousticness = st.number_input('Acousticness', min_value=0, max_value=100, key='acousticness', help="A confidence measure of whether the track is acoustic, ranging from 0.0 to 1.0.")/100
-    acousticness_weight = st.number_input('Weight (0-100)', min_value=0, max_value=100, key='acousticness_weight') / 100
+    acousticness = st.slider('Acousticness', min_value=0, max_value=100, key='acousticness', help="A confidence measure of whether the track is acoustic, ranging from 0.0 to 1.0.")/100
+    acousticness_weight = st.slider('Weight (0-100)', min_value=0, max_value=100, key='acousticness_weight') / 100
     st.subheader(' ')
 
 # Instrumentalness Checkbox
 if instrumentalness_checkbox:
-    instrumentalness = st.number_input('Instrumentalness', min_value=0, max_value=100, key='instrumentalness', help="Predicts whether a track contains no vocals. Values closer to 1.0 suggest a higher likelihood of being instrumental. Most songs that are not insturmental have a value less than 0.5, and more near 0.")/100
-    instrumentalness_weight = st.number_input('Weight (0-100)', min_value=0, max_value=100, key='instrumentalness_weight') / 100
+    instrumentalness = st.slider('Instrumentalness', min_value=0, max_value=100, key='instrumentalness', help="Predicts whether a track contains no vocals. Values closer to 1.0 suggest a higher likelihood of being instrumental. Most songs that are not insturmental have a value less than 0.5, and more near 0.")/100
+    instrumentalness_weight = st.slider('Weight (0-100)', min_value=0, max_value=100, key='instrumentalness_weight') / 100
     st.subheader(' ')
 
 # Valence Checkbox
 if valence_checkbox:
-    valence = st.number_input('Valence', min_value=0, max_value=100, key='valence', help="A measure of musical positiveness, with 1.0 being the most positive (e.g., happy) and 0.0 being the most negative (e.g., sad).")/100
-    valence_weight = st.number_input('Weight (0-100)', min_value=0, max_value=100, key='valence_weight') / 100
+    valence = st.slider('Valence', min_value=0, max_value=100, key='valence', help="A measure of musical positiveness, with 1.0 being the most positive (e.g., happy) and 0.0 being the most negative (e.g., sad).")/100
+    valence_weight = st.slider('Weight (0-100)', min_value=0, max_value=100, key='valence_weight') / 100
     st.subheader(' ')
 
 ##calculate button
