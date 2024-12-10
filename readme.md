@@ -1,43 +1,171 @@
-# Spotify Song Recommender
-## Input your song preferences and receive personalized song recommendations.
+<!-- Improved compatibility of back to top link -->
+<a id="readme-top"></a>
 
-### Link to Website! - https://spotify-song-recommender-bot.streamlit.app/
+<!-- PROJECT SHIELDS -->
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
-#   
+<!-- PROJECT LOGO & TITLE -->
+<br />
+<div align="center">
+  <img src="https://images.unsplash.com/photo-1495434942214-9b525bba74e9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="Spotify Recommender" width="400">
 
-![@neonbrand via Unsplash - person holding space gray iPhone 6](https://images.unsplash.com/photo-1495434942214-9b525bba74e9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80)
+  <h1 align="center">🎧 Spotify Song Recommender 🎶</h1>
+  
+  <p align="center">
+    Input your song preferences and receive personalized Spotify song recommendations!
+    <br />
+    <a href="https://spotify-song-recommender-bot.streamlit.app/"><strong>🌐 Try the App »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/George-Forgey/spotify-song-recommender">Report Bug</a>
+    ·
+    <a href="https://github.com/George-Forgey/spotify-song-recommender">Request Feature</a>
+  </p>
+</div>
 
-# Spotify Songs
+---
 
-The data comes from Spotify via the [`spotifyr` package](https://www.rcharlie.com/spotifyr/). [Charlie Thompson](https://twitter.com/_RCharlie), [Josiah Parry](https://twitter.com/JosiahParry), Donal Phipps, and Tom Wolff authored this package to make it easier to get either your own data or general metadata arounds songs from Spotify's API. Make sure to check out the [`spotifyr` package](https://www.rcharlie.com/spotifyr/) website to see how you can collect your own data!
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>📜 Table of Contents</summary>
+  <ol>
+    <li><a href="#project-overview">Project Overview</a></li>
+    <li><a href="#data-sources">Data Sources</a></li>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#technologies-used">Technologies Used</a></li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#inspiration-and-thanks">Inspiration and Thanks</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
 
-[Kaylin Pavlik](https://twitter.com/kaylinquest/status/1213138536570015745) had a recent [blogpost](https://www.kaylinpavlik.com/classifying-songs-genres/) using the audio features to explore and classify songs. She used the `spotifyr` package to collect about 5000 songs from 6 main categories (EDM, Latin, Pop, R&B, Rap, & Rock). 
+---
 
-h/t to [Jon Harmon](https://github.com/rfordatascience/tidytuesday/issues/160) & [Neal Grantham](https://twitter.com/nsgrantham/status/1213190975113199616).
+<!-- PROJECT OVERVIEW -->
+## Project Overview
 
-### Get the data here
+**Spotify Song Recommender** helps music enthusiasts discover new songs based on their existing preferences. Simply choose a track you like, and this recommender will suggest similar tunes you might enjoy. It leverages the powerful [`spotifyr` package](https://www.rcharlie.com/spotifyr/) to access detailed audio features and metadata directly from Spotify’s API.
 
-```{r}
-# Get the Data
+This project aims to make music discovery seamless, fun, and deeply personalized. By analyzing various audio attributes (like danceability, valence, energy, and more), we’re able to recommend tracks that resonate with your tastes.
 
-spotify_songs <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-01-21/spotify_songs.csv')
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-# Or read in with tidytuesdayR package (https://github.com/thebioengineer/tidytuesdayR)
-# PLEASE NOTE TO USE 2020 DATA YOU NEED TO UPDATE tidytuesdayR from GitHub
+---
 
-# Either ISO-8601 date or year/week works!
+<!-- DATA SOURCES -->
+## Data Sources
 
-# Install via devtools::install_github("thebioengineer/tidytuesdayR")
+The data comes from Spotify via the [`spotifyr` package](https://www.rcharlie.com/spotifyr/). [Charlie Thompson](https://twitter.com/_RCharlie), [Josiah Parry](https://twitter.com/JosiahParry), Donal Phipps, and Tom Wolff authored this package to streamline retrieving both user-specific and general metadata around tracks from Spotify’s API.
 
-tuesdata <- tidytuesdayR::tt_load('2020-01-21') 
-tuesdata <- tidytuesdayR::tt_load(2020, week = 4)
+Make sure to explore the [`spotifyr` package website](https://www.rcharlie.com/spotifyr/) to learn how you can collect your own data!
 
+Additionally, [Kaylin Pavlik](https://twitter.com/kaylinquest/status/1213138536570015745) wrote a [blog post](https://www.kaylinpavlik.com/classifying-songs-genres/) using Spotify’s audio features to classify songs by genre. She collected about 5000 songs from 6 main categories (EDM, Latin, Pop, R&B, Rap, & Rock) using `spotifyr`.
 
-spotify_songs <- tuesdata$spotify_songs
-```
-### Data Dictionary
+**Special Mentions**:
+- [Jon Harmon](https://github.com/rfordatascience/tidytuesday/issues/160)
+- [Neal Grantham](https://twitter.com/nsgrantham/status/1213190975113199616)
 
-# `spotify_songs.csv`
+The collective work of these individuals inspired and informed the data collection and analysis techniques used here.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+---
+
+<!-- FEATURES -->
+## Features
+
+- 🎵 **Personalized Recommendations**: Suggests tracks similar to your chosen song.
+- ⚡ **Rich Audio Features**: Analyzes multiple attributes (energy, danceability, tempo, etc.) to ensure top-tier recommendations.
+- 🎧 **Interactive Web App**: User-friendly interface built with Streamlit for instant results.
+- 🔄 **Continuously Updating**: Leverages the Spotify API for up-to-date song data.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+---
+
+<!-- TECHNOLOGIES USED -->
+## Technologies Used
+
+- **Python 3.8+**: Core language for data analysis and application logic.
+- **Streamlit**: For creating an interactive, web-based user interface.
+- **Spotifyr**: Streamlined access to the Spotify API and its song metadata.
+- **Pandas**: Data manipulation and cleaning.
+- **NumPy**: Mathematical operations and vectorized computations.
+- **Matplotlib/Seaborn**: Visualizing distributions and trends (if used).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+---
+
+<!-- USAGE -->
+## Usage
+
+1. **Run the Web App**:  
+   This recommender is deployed at:  
+   [https://spotify-song-recommender-bot.streamlit.app/](https://spotify-song-recommender-bot.streamlit.app/)
+
+   Just visit the link, enter a song you love, and let the app handle the rest!
+
+2. **Local Setup (Optional)**:
+   - Clone the repository:
+     ```bash
+     git clone https://github.com/your-username/spotify-song-recommender.git
+     cd spotify-song-recommender
+     ```
+   - Install dependencies:
+     ```bash
+     pip install -r requirements.txt
+     ```
+   - Run locally:
+     ```bash
+     streamlit run app.py
+     ```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+---
+
+<!-- INSPIRATION AND THANKS -->
+## Inspiration and Thanks
+
+This project is inspired by efforts to make music discovery more intuitive. By combining open-source tools and insights from data enthusiasts, we push the boundaries of personalized recommendations.
+
+Shout out to the data community and all contributors who developed and documented `spotifyr`, making Spotify data more accessible.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+---
+
+<!-- LICENSE -->
+## License
+
+Distributed under the **MIT License**. See `LICENSE` for more information.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+---
+
+<!-- CONTACT -->
+## Contact
+
+**Project Maintainer**: [George Forgey](https://github.com/George-Forgey)  
+**Email**: [forgey.g@northeastern.edu](mailto:forgey.g@northeastern.edu)  
+**LinkedIn**: [My LinkedIn Profile](https://linkedin.com/in/george-forgey)
+
+Project Link: [https://github.com/George-Forgey/spotify-song-recommender](https://github.com/George-Forgey/spotify-song-recommender)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+---
+
+## Data Dictionary
+
 
 |variable                 |class     |description |
 |:---|:---|:-----------|
@@ -64,3 +192,19 @@ spotify_songs <- tuesdata$spotify_songs
 |valence                  |double    | A measure from 0.0 to 1.0 describing the musical positiveness conveyed by a track. Tracks with high valence sound more positive (e.g. happy, cheerful, euphoric), while tracks with low valence sound more negative (e.g. sad, depressed, angry). |
 |tempo                    |double    | The overall estimated tempo of a track in beats per minute (BPM). In musical terminology, tempo is the speed or pace of a given piece and derives directly from the average beat duration. |
 |duration_ms              |double    | Duration of song in milliseconds |
+
+---
+
+<!-- MARKDOWN LINKS & IMAGES -->
+[contributors-shield]: https://img.shields.io/github/contributors/George-Forgey/spotify-song-recommender.svg?style=for-the-badge
+[contributors-url]: https://github.com/George-Forgey/spotify-song-recommender/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/George-Forgey/spotify-song-recommender.svg?style=for-the-badge
+[forks-url]: https://github.com/George-Forgey/spotify-song-recommender/network/members
+[stars-shield]: https://img.shields.io/github/stars/George-Forgey/spotify-song-recommender.svg?style=for-the-badge
+[stars-url]: https://github.com/George-Forgey/spotify-song-recommender/stargazers
+[issues-shield]: https://img.shields.io/github/issues/George-Forgey/spotify-song-recommender.svg?style=for-the-badge
+[issues-url]: https://github.com/George-Forgey/spotify-song-recommender/issues
+[license-shield]: https://img.shields.io/github/license/George-Forgey/spotify-song-recommender.svg?style=for-the-badge
+[license-url]: https://github.com/George-Forgey/spotify-song-recommender/blob/main/LICENSE
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/george-forgey
